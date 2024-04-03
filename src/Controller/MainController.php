@@ -15,6 +15,7 @@ class MainController extends AbstractController
             "top" => "Sun",
             "bottom" => "Moon",
             'thirdWheel' => "Y/N",
+            'status' => "alive",
         ];
         return $this->render("main/homepage.html.twig", ["numberOfStarships" => $starshipCount, 'myShip' => $myShip]);
     }

@@ -1,3 +1,8 @@
+{% extends  'base.html.twig' %}
+{% block title %}
+    {{ parent() }} ShipShop
+{% endblock %}
+{% block body %}
 <h1><strong>Hello World !</strong></h1>
 <p> michelle {{numberOfStarships}} </p>
 <div>
@@ -7,12 +12,17 @@
             <td>{{myShip.top}}</td>
         </tr>
         <tr>
-            <th> bottom</th>
+            <th> Bottom</th>
             <td>{{myShip.bottom|upper}}</td>
         </tr>
         <tr>
-            <th> thirdWheel</th>
+            <th> ThirdWheel</th>
             <td>{{myShip.thirdWheel}}</td>
+        </tr>
+        <tr>
+            <th> Status</th>
+            <td>{{myShip.status}}</td>
         </tr>
     </table>
 </div>
+{% endblock %} 
