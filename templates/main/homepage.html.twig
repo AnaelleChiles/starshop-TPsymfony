@@ -4,24 +4,21 @@
 {% endblock %}
 {% block body %}
 <h1><strong>Hello World !</strong></h1>
-<p> michelle {{numberOfStarships}} </p>
+<p> Nombre de ships : {{ships|length}} </p>
+{% if ships|length > 400 %}
+    <p>
+        C'est beaucoup de ships!!!!
+    </p>
+{% endif %}
 <div>
     <table>
         <tr>
-            <th> Top</th>
-            <td>{{myShip.top}}</td>
+            <th> Id</th>
+            <td>{{myShip.id}}</td>
         </tr>
         <tr>
-            <th> Bottom</th>
-            <td>{{myShip.bottom|upper}}</td>
-        </tr>
-        <tr>
-            <th> ThirdWheel</th>
-            <td>{{myShip.thirdWheel}}</td>
-        </tr>
-        <tr>
-            <th> Status</th>
-            <td>{{myShip.status}}</td>
+            <th> Name</th>
+            <td>{{myShip.name|upper}}</td>
         </tr>
     </table>
 </div>
