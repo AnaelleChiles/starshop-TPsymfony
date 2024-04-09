@@ -40,6 +40,7 @@ class ComposerStaticInit9a009697e12b2fafffa714e43af84016
             'Symfony\\Flex\\' => 13,
             'Symfony\\Contracts\\Translation\\' => 30,
             'Symfony\\Contracts\\Service\\' => 26,
+            'Symfony\\Contracts\\HttpClient\\' => 29,
             'Symfony\\Contracts\\EventDispatcher\\' => 34,
             'Symfony\\Contracts\\Cache\\' => 24,
             'Symfony\\Component\\Yaml\\' => 23,
@@ -54,6 +55,7 @@ class ComposerStaticInit9a009697e12b2fafffa714e43af84016
             'Symfony\\Component\\PropertyAccess\\' => 33,
             'Symfony\\Component\\HttpKernel\\' => 29,
             'Symfony\\Component\\HttpFoundation\\' => 33,
+            'Symfony\\Component\\HttpClient\\' => 29,
             'Symfony\\Component\\Finder\\' => 25,
             'Symfony\\Component\\Filesystem\\' => 29,
             'Symfony\\Component\\EventDispatcher\\' => 34,
@@ -63,6 +65,8 @@ class ComposerStaticInit9a009697e12b2fafffa714e43af84016
             'Symfony\\Component\\Console\\' => 26,
             'Symfony\\Component\\Config\\' => 25,
             'Symfony\\Component\\Cache\\' => 24,
+            'Symfony\\Component\\Asset\\' => 24,
+            'Symfony\\Component\\AssetMapper\\' => 30,
             'Symfony\\Bundle\\WebProfilerBundle\\' => 33,
             'Symfony\\Bundle\\TwigBundle\\' => 26,
             'Symfony\\Bundle\\MonologBundle\\' => 29,
@@ -87,6 +91,10 @@ class ComposerStaticInit9a009697e12b2fafffa714e43af84016
         array (
             'Doctrine\\Deprecations\\' => 22,
         ),
+        'C' => 
+        array (
+            'Composer\\Semver\\' => 16,
+        ),
         'A' => 
         array (
             'App\\Tests\\' => 10,
@@ -98,8 +106,8 @@ class ComposerStaticInit9a009697e12b2fafffa714e43af84016
         'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
-            1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
-            2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
         ),
         'Webmozart\\Assert\\' => 
         array (
@@ -144,6 +152,10 @@ class ComposerStaticInit9a009697e12b2fafffa714e43af84016
         'Symfony\\Contracts\\Service\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/service-contracts',
+        ),
+        'Symfony\\Contracts\\HttpClient\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/http-client-contracts',
         ),
         'Symfony\\Contracts\\EventDispatcher\\' => 
         array (
@@ -201,6 +213,10 @@ class ComposerStaticInit9a009697e12b2fafffa714e43af84016
         array (
             0 => __DIR__ . '/..' . '/symfony/http-foundation',
         ),
+        'Symfony\\Component\\HttpClient\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/http-client',
+        ),
         'Symfony\\Component\\Finder\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/finder',
@@ -236,6 +252,14 @@ class ComposerStaticInit9a009697e12b2fafffa714e43af84016
         'Symfony\\Component\\Cache\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/cache',
+        ),
+        'Symfony\\Component\\Asset\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/asset',
+        ),
+        'Symfony\\Component\\AssetMapper\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/asset-mapper',
         ),
         'Symfony\\Bundle\\WebProfilerBundle\\' => 
         array (
@@ -292,6 +316,10 @@ class ComposerStaticInit9a009697e12b2fafffa714e43af84016
         'Doctrine\\Deprecations\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/deprecations/lib/Doctrine/Deprecations',
+        ),
+        'Composer\\Semver\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/composer/semver/src',
         ),
         'App\\Tests\\' => 
         array (
