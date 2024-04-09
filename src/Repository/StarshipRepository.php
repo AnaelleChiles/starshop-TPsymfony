@@ -9,6 +9,16 @@ class StarshipRepository{
     public function __construct(private LoggerInterface $logger){
 
     }
+    public function find(int $id): ?Starship
+    {
+        foreach ($this->findAll() as $starship) {
+            if ($starship->getId() === $id) {
+                return $starship;
+            }
+        }
+        return null;
+    }
+
     public function findAll() : array{
         $this->logger->info("Ceci est un super duper message");
         return [

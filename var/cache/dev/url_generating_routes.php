@@ -19,6 +19,8 @@ return [
     '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::stylesheet'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], [], []],
     'app_main_homepage' => [[], ['_controller' => 'App\\Controller\\MainController::HomePage'], [], [['text', '/home']], [], [], []],
     'app_starshipapi_getcollection' => [[], ['_controller' => 'App\\Controller\\StarshipApiController::getCollection'], [], [['text', '/api/starships']], [], [], []],
+    'app_starshipapi_get' => [['id'], ['_controller' => 'App\\Controller\\StarshipApiController::get'], ['id' => '\\d+'], [['variable', '/', '\\d+', 'id', true], ['text', '/api/starships']], [], [], []],
     'App\Controller\MainController::HomePage' => [[], ['_controller' => 'App\\Controller\\MainController::HomePage'], [], [['text', '/home']], [], [], []],
     'App\Controller\StarshipApiController::getCollection' => [[], ['_controller' => 'App\\Controller\\StarshipApiController::getCollection'], [], [['text', '/api/starships']], [], [], []],
+    'App\Controller\StarshipApiController::get' => [['id'], ['_controller' => 'App\\Controller\\StarshipApiController::get'], ['id' => '\\d+'], [['variable', '/', '\\d+', 'id', true], ['text', '/api/starships']], [], [], []],
 ];

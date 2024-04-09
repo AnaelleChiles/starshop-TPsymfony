@@ -60,3 +60,14 @@ fc023e,127.0.0.1,GET,http://127.0.0.1:8000/home,1712647679,,200,request
 aee11b,127.0.0.1,GET,http://127.0.0.1:8000/home,1712647680,,200,request
 a9af9b,127.0.0.1,GET,http://127.0.0.1:8000/home,1712647681,,200,request
 7ac05b,127.0.0.1,GET,http://127.0.0.1:8000/api/starships,1712647685,,200,request
+cac6c3,127.0.0.1,GET,http://127.0.0.1:8000/home,1712647949,,200,request
+c0468b,127.0.0.1,GET,http://127.0.0.1:8000/api/starships,1712647951,,200,request
+4846d2,127.0.0.1,GET,http://127.0.0.1:8000/api/starships,1712647960,,200,request
+ed6f7a,127.0.0.1,GET,http://127.0.0.1:8000/api/starships/wharf,1712648035,c7129f,404,request
+c7129f,127.0.0.1,GET,http://127.0.0.1:8000/api/starships/wharf,1712648035,,404,request
+64d1d2,127.0.0.1,GET,http://127.0.0.1:8000/home,1712648190,,200,request
+816285,127.0.0.1,GET,http://127.0.0.1:8000/api/starships/1,1712648598,,200,request
+4c3ce4,127.0.0.1,GET,http://127.0.0.1:8000/api/starships/1,1712648601,,200,request
+b91483,127.0.0.1,GET,http://127.0.0.1:8000/api/starships/1,1712648602,,200,request
+38740a,127.0.0.1,GET,http://127.0.0.1:8000/api/starships/1,1712648602,,200,request
+0a2b1c,127.0.0.1,GET,http://127.0.0.1:8000/home,1712648684,,200,request
