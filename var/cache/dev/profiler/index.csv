@@ -46,3 +46,12 @@ b8fd56,127.0.0.1,GET,http://127.0.0.1:8000/images/status-in-progress.png,1712656
 dfbaf0,127.0.0.1,GET,http://127.0.0.1:8000/home,1712656079,,200,request
 0c76e6,127.0.0.1,GET,http://127.0.0.1:8000/images/status-in-progress.png,1712656079,6f8e44,404,request
 6f8e44,127.0.0.1,GET,http://127.0.0.1:8000/images/status-in-progress.png,1712656079,,404,request
+2f0914,127.0.0.1,GET,http://127.0.0.1:8000/starships/1,1712656130,,200,request
+a7ffa9,127.0.0.1,GET,http://127.0.0.1:8000/home,1712656213,f4c693,500,request
+f4c693,127.0.0.1,GET,http://127.0.0.1:8000/home,1712656213,,500,request
+21348f,127.0.0.1,GET,http://127.0.0.1:8000/home,1712656300,,200,request
+d1cb1f,127.0.0.1,GET,http://127.0.0.1:8000/images/status-in-progress.png,1712656300,a2f91b,404,request
+a2f91b,127.0.0.1,GET,http://127.0.0.1:8000/images/status-in-progress.png,1712656300,,404,request
+d11516,127.0.0.1,GET,http://127.0.0.1:8000/home,1712656382,,200,request
+313bcf,127.0.0.1,GET,http://127.0.0.1:8000/images/status-in-progress.png,1712656382,2d04b9,404,request
+2d04b9,127.0.0.1,GET,http://127.0.0.1:8000/images/status-in-progress.png,1712656382,,404,request
