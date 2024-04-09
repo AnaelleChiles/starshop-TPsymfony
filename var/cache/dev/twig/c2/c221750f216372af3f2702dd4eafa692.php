@@ -109,7 +109,10 @@ class __TwigTemplate_a7c695776b8c53a0daf91561e4c1a00c extends Template
                             <div class=\"ml-5\">
                                 <div class=\"rounded-2xl py-1 px-3 flex justify-center w-32 items-center bg-amber-400/10\">
                                     <div class=\"rounded-full h-2 w-2 bg-amber-400 blur-[1px] mr-2\"></div>
-                                    <p class=\"uppercase text-xs text-nowrap\">in progress</p>
+                                    <p class=\"uppercase text-xs text-nowrap\"> ";
+            // line 22
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["ship"], "status", [], "any", false, false, false, 22), "value", [], "any", false, false, false, 22), "html", null, true);
+            echo "</p>
                                 </div>
                                 <h4 class=\"text-[22px] pt-1 font-semibold\">
                                     <a
@@ -178,7 +181,7 @@ class __TwigTemplate_a7c695776b8c53a0daf91561e4c1a00c extends Template
      */
     public function getDebugInfo()
     {
-        return array (  146 => 49,  140 => 45,  106 => 16,  102 => 15,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  149 => 49,  143 => 45,  114 => 22,  106 => 16,  102 => 15,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -204,7 +207,7 @@ class __TwigTemplate_a7c695776b8c53a0daf91561e4c1a00c extends Template
                             <div class=\"ml-5\">
                                 <div class=\"rounded-2xl py-1 px-3 flex justify-center w-32 items-center bg-amber-400/10\">
                                     <div class=\"rounded-full h-2 w-2 bg-amber-400 blur-[1px] mr-2\"></div>
-                                    <p class=\"uppercase text-xs text-nowrap\">in progress</p>
+                                    <p class=\"uppercase text-xs text-nowrap\"> {{ ship.status.value }}</p>
                                 </div>
                                 <h4 class=\"text-[22px] pt-1 font-semibold\">
                                     <a

@@ -1,1 +1,2 @@
 ./symfony.exe composer install
+php bin/console tailwind:build -w
