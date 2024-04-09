@@ -53,7 +53,7 @@ class __TwigTemplate_c9437b61ec57559ab348b39928f8e04f extends Template
         // line 5
         $this->displayBlock('title', $context, $blocks);
         echo "</title>
-        <link rel=\"icon\" href=\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>\">
+        <link rel=\"icon\" href=\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>\">
         ";
         // line 7
         $this->displayBlock('stylesheets', $context, $blocks);
@@ -64,16 +64,41 @@ class __TwigTemplate_c9437b61ec57559ab348b39928f8e04f extends Template
         $this->displayBlock('javascripts', $context, $blocks);
         // line 13
         echo "    </head>
-    <body>
-        <img src=\"";
-        // line 15
+    <body class=\"text-white\" style=\"background: radial-gradient(102.21% 102.21% at 50% 28.75%, #00121C 42.62%, #013954 100%);\">
+        <div class=\"flex flex-col justify-between min-h-screen relative\">
+            <div>
+                <header class=\"h-[114px] shrink-0 flex flex-col sm:flex-row items-center sm:justify-between py-4 sm:py-0 px-6 border-b border-white/20 shadow-md\">
+                    <a href=\"#\">
+                        <img class=\"h-[42px]\" src=\"";
+        // line 19
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/starshop-logo.png"), "html", null, true);
-        echo " \" alt=\"Starshop Logo\">
-        ";
-        // line 16
+        echo "\" alt=\"starshop logo\">
+                    </a>
+                    <nav class=\"flex space-x-4 font-semibold\">
+                        <a class=\"hover:text-amber-400 pt-2\" href=\"#\">
+                            Home
+                        </a>
+                        <a class=\"hover:text-amber-400  pt-2\" href=\"#\">
+                            About
+                        </a>
+                        <a class=\"hover:text-amber-400 pt-2\" href=\"#\">
+                            Contact
+                        </a>
+                        <a class=\"rounded-[60px] py-2 px-5 bg-white/10 hover:bg-white/20\" href=\"#\">
+                            Get Started
+                        </a>
+                    </nav>
+                </header>
+                ";
+        // line 36
         $this->displayBlock('body', $context, $blocks);
-        // line 17
-        echo "    </body>
+        // line 37
+        echo "            </div>
+            <div class=\"p-5 bg-white/5 mt-3 text-center\">
+                Made with ❤️ by <a class=\"text-[#0086C4]\" href=\"https://symfonycasts.com\">SymfonyCasts</a>
+            </div>
+        </div>
+    </body>
 </html>
 ";
         
@@ -134,7 +159,6 @@ class __TwigTemplate_c9437b61ec57559ab348b39928f8e04f extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
         // line 11
-        echo "            ";
         $this->displayBlock('importmap', $context, $blocks);
         // line 12
         echo "        ";
@@ -165,7 +189,7 @@ class __TwigTemplate_c9437b61ec57559ab348b39928f8e04f extends Template
 
     }
 
-    // line 16
+    // line 36
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -204,7 +228,7 @@ class __TwigTemplate_c9437b61ec57559ab348b39928f8e04f extends Template
      */
     public function getDebugInfo()
     {
-        return array (  169 => 16,  150 => 11,  140 => 12,  137 => 11,  127 => 10,  117 => 8,  107 => 7,  88 => 5,  76 => 17,  74 => 16,  70 => 15,  66 => 13,  64 => 10,  61 => 9,  59 => 7,  54 => 5,  48 => 1,);
+        return array (  193 => 36,  174 => 11,  164 => 12,  162 => 11,  152 => 10,  142 => 8,  132 => 7,  113 => 5,  96 => 37,  94 => 36,  74 => 19,  66 => 13,  64 => 10,  61 => 9,  59 => 7,  54 => 5,  48 => 1,);
     }
 
     public function getSourceContext()
@@ -214,17 +238,42 @@ class __TwigTemplate_c9437b61ec57559ab348b39928f8e04f extends Template
     <head>
         <meta charset=\"UTF-8\">
         <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel=\"icon\" href=\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>\">
+        <link rel=\"icon\" href=\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>\">
         {% block stylesheets %}
         {% endblock %}
 
         {% block javascripts %}
-            {% block importmap %}{{ importmap('app') }}{% endblock %}
+{% block importmap %}{{ importmap('app') }}{% endblock %}
         {% endblock %}
     </head>
-    <body>
-        <img src=\"{{ asset('images/starshop-logo.png') }} \" alt=\"Starshop Logo\">
-        {% block body %}{% endblock %}
+    <body class=\"text-white\" style=\"background: radial-gradient(102.21% 102.21% at 50% 28.75%, #00121C 42.62%, #013954 100%);\">
+        <div class=\"flex flex-col justify-between min-h-screen relative\">
+            <div>
+                <header class=\"h-[114px] shrink-0 flex flex-col sm:flex-row items-center sm:justify-between py-4 sm:py-0 px-6 border-b border-white/20 shadow-md\">
+                    <a href=\"#\">
+                        <img class=\"h-[42px]\" src=\"{{ asset('images/starshop-logo.png') }}\" alt=\"starshop logo\">
+                    </a>
+                    <nav class=\"flex space-x-4 font-semibold\">
+                        <a class=\"hover:text-amber-400 pt-2\" href=\"#\">
+                            Home
+                        </a>
+                        <a class=\"hover:text-amber-400  pt-2\" href=\"#\">
+                            About
+                        </a>
+                        <a class=\"hover:text-amber-400 pt-2\" href=\"#\">
+                            Contact
+                        </a>
+                        <a class=\"rounded-[60px] py-2 px-5 bg-white/10 hover:bg-white/20\" href=\"#\">
+                            Get Started
+                        </a>
+                    </nav>
+                </header>
+                {% block body %}{% endblock %}
+            </div>
+            <div class=\"p-5 bg-white/5 mt-3 text-center\">
+                Made with ❤️ by <a class=\"text-[#0086C4]\" href=\"https://symfonycasts.com\">SymfonyCasts</a>
+            </div>
+        </div>
     </body>
 </html>
 ", "base.html.twig", "C:\\Users\\ac606785\\Desktop\\starshop-TPsymfony\\templates\\base.html.twig");

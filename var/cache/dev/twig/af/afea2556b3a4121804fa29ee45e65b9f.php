@@ -55,7 +55,7 @@ class __TwigTemplate_26da0ddaebb152252ae9d658760af5d1 extends Template
 
     }
 
-    // line 2
+    // line 3
     public function block_title($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -65,7 +65,7 @@ class __TwigTemplate_26da0ddaebb152252ae9d658760af5d1 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["ship"]) || array_key_exists("ship", $context) ? $context["ship"] : (function () { throw new RuntimeError('Variable "ship" does not exist.', 2, $this->source); })()), "name", [], "any", false, false, false, 2), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["ship"]) || array_key_exists("ship", $context) ? $context["ship"] : (function () { throw new RuntimeError('Variable "ship" does not exist.', 3, $this->source); })()), "name", [], "any", false, false, false, 3), "html", null, true);
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -74,7 +74,7 @@ class __TwigTemplate_26da0ddaebb152252ae9d658760af5d1 extends Template
 
     }
 
-    // line 3
+    // line 5
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -84,26 +84,55 @@ class __TwigTemplate_26da0ddaebb152252ae9d658760af5d1 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 4
-        echo "    <h1>";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["ship"]) || array_key_exists("ship", $context) ? $context["ship"] : (function () { throw new RuntimeError('Variable "ship" does not exist.', 4, $this->source); })()), "name", [], "any", false, false, false, 4), "html", null, true);
-        echo "</h1>
-    <table>
-        <tr>
-            <th> Id</th>
-            <td>";
-        // line 8
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["ship"]) || array_key_exists("ship", $context) ? $context["ship"] : (function () { throw new RuntimeError('Variable "ship" does not exist.', 8, $this->source); })()), "id", [], "any", false, false, false, 8), "html", null, true);
-        echo "</td>
-        </tr>
-        <tr>
-            <th> Name</th>
-            <td>";
-        // line 12
-        echo twig_escape_filter($this->env, twig_upper_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["ship"]) || array_key_exists("ship", $context) ? $context["ship"] : (function () { throw new RuntimeError('Variable "ship" does not exist.', 12, $this->source); })()), "name", [], "any", false, false, false, 12)), "html", null, true);
-        echo "</td>
-        </tr>
-    </table>
+        // line 6
+        echo "<div class=\"my-4 px-8\">
+    <a class=\"bg-white hover:bg-gray-200 rounded-xl p-2 text-black\" href=\"#\">
+        <svg class=\"inline text-black\" xmlns=\"http://www.w3.org/2000/svg\" height=\"16\" width=\"14\" viewBox=\"0 0 448 512\"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill=\"#000\" d=\"M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z\"/></svg>
+        Back
+    </a>
+</div>
+<div class=\"md:flex justify-center space-x-3 mt-5 px-4 lg:px-8\">
+    <div class=\"flex justify-center\">
+        <img class=\"max-h-[300px] md:max-h-[500px]\" src=\"";
+        // line 14
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/purple-rocket.png"), "html", null, true);
+        echo "\" alt=\"purple ship launching\">
+    </div>
+    <div class=\"space-y-5\">
+        <div class=\"mt-8 max-w-xl mx-auto\">
+            <div class=\"px-8 pt-8\">
+                <div class=\"rounded-2xl py-1 px-3 flex justify-center w-32 items-center bg-amber-400/10\">
+                    <div class=\"rounded-full h-2 w-2 bg-amber-400 blur-[1px] mr-2\"></div>
+                    <p class=\"uppercase text-xs\">";
+        // line 21
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["ship"]) || array_key_exists("ship", $context) ? $context["ship"] : (function () { throw new RuntimeError('Variable "ship" does not exist.', 21, $this->source); })()), "status", [], "any", false, false, false, 21), "html", null, true);
+        echo "</p>
+                </div>
+
+                <h1 class=\"text-[32px] font-semibold border-b border-white/10 pb-5 mb-5\">
+                    ";
+        // line 25
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["ship"]) || array_key_exists("ship", $context) ? $context["ship"] : (function () { throw new RuntimeError('Variable "ship" does not exist.', 25, $this->source); })()), "name", [], "any", false, false, false, 25), "html", null, true);
+        echo "
+                </h1>
+                <h4 class=\"text-xs text-slate-300 font-semibold mt-2 uppercase\">Spaceship Captain</h4>
+                <p class=\"text-[22px] font-semibold\">";
+        // line 28
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["ship"]) || array_key_exists("ship", $context) ? $context["ship"] : (function () { throw new RuntimeError('Variable "ship" does not exist.', 28, $this->source); })()), "captain", [], "any", false, false, false, 28), "html", null, true);
+        echo "</p>
+
+                <h4 class=\"text-xs text-slate-300 font-semibold mt-2 uppercase\">Class</h4>
+                <p class=\"text-[22px] font-semibold\">";
+        // line 31
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["ship"]) || array_key_exists("ship", $context) ? $context["ship"] : (function () { throw new RuntimeError('Variable "ship" does not exist.', 31, $this->source); })()), "class", [], "any", false, false, false, 31), "html", null, true);
+        echo "</p>
+
+                <h4 class=\"text-xs text-slate-300 font-semibold mt-2 uppercase\">Ship Status</h4>
+                <p class=\"text-[22px] font-semibold\">30,000 lys to next service</p>
+            </div>
+        </div>
+    </div>
+</div>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -134,25 +163,50 @@ class __TwigTemplate_26da0ddaebb152252ae9d658760af5d1 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  103 => 12,  96 => 8,  88 => 4,  78 => 3,  59 => 2,  36 => 1,);
+        return array (  127 => 31,  121 => 28,  115 => 25,  108 => 21,  98 => 14,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
+
 {% block title %}{{ ship.name }}{% endblock %}
+
 {% block body %}
-    <h1>{{ ship.name}}</h1>
-    <table>
-        <tr>
-            <th> Id</th>
-            <td>{{ship.id}}</td>
-        </tr>
-        <tr>
-            <th> Name</th>
-            <td>{{ship.name|upper}}</td>
-        </tr>
-    </table>
-{% endblock %}", "starship/show.html.twig", "C:\\Users\\ac606785\\Desktop\\starshop-TPsymfony\\templates\\starship\\show.html.twig");
+<div class=\"my-4 px-8\">
+    <a class=\"bg-white hover:bg-gray-200 rounded-xl p-2 text-black\" href=\"#\">
+        <svg class=\"inline text-black\" xmlns=\"http://www.w3.org/2000/svg\" height=\"16\" width=\"14\" viewBox=\"0 0 448 512\"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill=\"#000\" d=\"M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z\"/></svg>
+        Back
+    </a>
+</div>
+<div class=\"md:flex justify-center space-x-3 mt-5 px-4 lg:px-8\">
+    <div class=\"flex justify-center\">
+        <img class=\"max-h-[300px] md:max-h-[500px]\" src=\"{{ asset('images/purple-rocket.png') }}\" alt=\"purple ship launching\">
+    </div>
+    <div class=\"space-y-5\">
+        <div class=\"mt-8 max-w-xl mx-auto\">
+            <div class=\"px-8 pt-8\">
+                <div class=\"rounded-2xl py-1 px-3 flex justify-center w-32 items-center bg-amber-400/10\">
+                    <div class=\"rounded-full h-2 w-2 bg-amber-400 blur-[1px] mr-2\"></div>
+                    <p class=\"uppercase text-xs\">{{ ship.status }}</p>
+                </div>
+
+                <h1 class=\"text-[32px] font-semibold border-b border-white/10 pb-5 mb-5\">
+                    {{ ship.name }}
+                </h1>
+                <h4 class=\"text-xs text-slate-300 font-semibold mt-2 uppercase\">Spaceship Captain</h4>
+                <p class=\"text-[22px] font-semibold\">{{ ship.captain }}</p>
+
+                <h4 class=\"text-xs text-slate-300 font-semibold mt-2 uppercase\">Class</h4>
+                <p class=\"text-[22px] font-semibold\">{{ ship.class }}</p>
+
+                <h4 class=\"text-xs text-slate-300 font-semibold mt-2 uppercase\">Ship Status</h4>
+                <p class=\"text-[22px] font-semibold\">30,000 lys to next service</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+", "starship/show.html.twig", "C:\\Users\\ac606785\\Desktop\\starshop-TPsymfony\\templates\\starship\\show.html.twig");
     }
 }

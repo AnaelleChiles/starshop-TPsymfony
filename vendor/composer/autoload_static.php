@@ -32,6 +32,7 @@ class ComposerStaticInit9a009697e12b2fafffa714e43af84016
         ),
         'S' => 
         array (
+            'Symfonycasts\\TailwindBundle\\' => 28,
             'Symfony\\Runtime\\Symfony\\Component\\' => 34,
             'Symfony\\Polyfill\\Php83\\' => 23,
             'Symfony\\Polyfill\\Mbstring\\' => 26,
@@ -53,6 +54,7 @@ class ComposerStaticInit9a009697e12b2fafffa714e43af84016
             'Symfony\\Component\\Routing\\' => 26,
             'Symfony\\Component\\PropertyInfo\\' => 31,
             'Symfony\\Component\\PropertyAccess\\' => 33,
+            'Symfony\\Component\\Process\\' => 26,
             'Symfony\\Component\\HttpKernel\\' => 29,
             'Symfony\\Component\\HttpFoundation\\' => 33,
             'Symfony\\Component\\HttpClient\\' => 29,
@@ -120,6 +122,10 @@ class ComposerStaticInit9a009697e12b2fafffa714e43af84016
         'Twig\\' => 
         array (
             0 => __DIR__ . '/..' . '/twig/twig/src',
+        ),
+        'Symfonycasts\\TailwindBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfonycasts/tailwind-bundle/src',
         ),
         'Symfony\\Runtime\\Symfony\\Component\\' => 
         array (
@@ -204,6 +210,10 @@ class ComposerStaticInit9a009697e12b2fafffa714e43af84016
         'Symfony\\Component\\PropertyAccess\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/property-access',
+        ),
+        'Symfony\\Component\\Process\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/process',
         ),
         'Symfony\\Component\\HttpKernel\\' => 
         array (
