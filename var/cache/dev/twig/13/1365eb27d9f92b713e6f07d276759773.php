@@ -108,16 +108,23 @@ class __TwigTemplate_3d6c40b0602d5677d4336d85ea31159c extends Template
     <table>
         <tr>
             <th> Id</th>
-            <td>";
-        // line 17
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["myShip"]) || array_key_exists("myShip", $context) ? $context["myShip"] : (function () { throw new RuntimeError('Variable "myShip" does not exist.', 17, $this->source); })()), "id", [], "any", false, false, false, 17), "html", null, true);
-        echo "</td>
+            <td> 
+                <a href=\"";
+        // line 18
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_starship_show", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["myShip"]) || array_key_exists("myShip", $context) ? $context["myShip"] : (function () { throw new RuntimeError('Variable "myShip" does not exist.', 18, $this->source); })()), "id", [], "any", false, false, false, 18)]), "html", null, true);
+        echo " \">
+                    ";
+        // line 19
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["myShip"]) || array_key_exists("myShip", $context) ? $context["myShip"] : (function () { throw new RuntimeError('Variable "myShip" does not exist.', 19, $this->source); })()), "id", [], "any", false, false, false, 19), "html", null, true);
+        echo "
+                </a>
+            </td>
         </tr>
         <tr>
             <th> Name</th>
             <td>";
-        // line 21
-        echo twig_escape_filter($this->env, twig_upper_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["myShip"]) || array_key_exists("myShip", $context) ? $context["myShip"] : (function () { throw new RuntimeError('Variable "myShip" does not exist.', 21, $this->source); })()), "name", [], "any", false, false, false, 21)), "html", null, true);
+        // line 25
+        echo twig_escape_filter($this->env, twig_upper_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["myShip"]) || array_key_exists("myShip", $context) ? $context["myShip"] : (function () { throw new RuntimeError('Variable "myShip" does not exist.', 25, $this->source); })()), "name", [], "any", false, false, false, 25)), "html", null, true);
         echo "</td>
         </tr>
     </table>
@@ -152,7 +159,7 @@ class __TwigTemplate_3d6c40b0602d5677d4336d85ea31159c extends Template
      */
     public function getDebugInfo()
     {
-        return array (  120 => 21,  113 => 17,  107 => 13,  101 => 9,  99 => 8,  95 => 7,  92 => 6,  82 => 5,  69 => 3,  59 => 2,  36 => 1,);
+        return array (  127 => 25,  118 => 19,  114 => 18,  107 => 13,  101 => 9,  99 => 8,  95 => 7,  92 => 6,  82 => 5,  69 => 3,  59 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -173,7 +180,11 @@ class __TwigTemplate_3d6c40b0602d5677d4336d85ea31159c extends Template
     <table>
         <tr>
             <th> Id</th>
-            <td>{{myShip.id}}</td>
+            <td> 
+                <a href=\"{{ path('app_starship_show', { id: myShip.id }) }} \">
+                    {{myShip.id}}
+                </a>
+            </td>
         </tr>
         <tr>
             <th> Name</th>

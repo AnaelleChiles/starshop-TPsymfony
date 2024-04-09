@@ -20,7 +20,9 @@ return [
     'app_main_homepage' => [[], ['_controller' => 'App\\Controller\\MainController::HomePage'], [], [['text', '/home']], [], [], []],
     'app_starshipapi_getcollection' => [[], ['_controller' => 'App\\Controller\\StarshipApiController::getCollection'], [], [['text', '/api/starships']], [], [], []],
     'app_starshipapi_get' => [['id'], ['_controller' => 'App\\Controller\\StarshipApiController::get'], ['id' => '\\d+'], [['variable', '/', '\\d+', 'id', true], ['text', '/api/starships']], [], [], []],
+    'app_starship_show' => [['id'], ['_controller' => 'App\\Controller\\StarshipController::show'], ['id' => '\\d+'], [['variable', '/', '\\d+', 'id', true], ['text', '/starships']], [], [], []],
     'App\Controller\MainController::HomePage' => [[], ['_controller' => 'App\\Controller\\MainController::HomePage'], [], [['text', '/home']], [], [], []],
     'App\Controller\StarshipApiController::getCollection' => [[], ['_controller' => 'App\\Controller\\StarshipApiController::getCollection'], [], [['text', '/api/starships']], [], [], []],
     'App\Controller\StarshipApiController::get' => [['id'], ['_controller' => 'App\\Controller\\StarshipApiController::get'], ['id' => '\\d+'], [['variable', '/', '\\d+', 'id', true], ['text', '/api/starships']], [], [], []],
+    'App\Controller\StarshipController::show' => [['id'], ['_controller' => 'App\\Controller\\StarshipController::show'], ['id' => '\\d+'], [['variable', '/', '\\d+', 'id', true], ['text', '/starships']], [], [], []],
 ];
