@@ -1,0 +1,3 @@
+<?php //c6aaab7e5e4ecbb71c37a701988ae2f7
+
+return [PHP_INT_MAX, 'images/status-waiting.png'];

@@ -68,14 +68,20 @@ class __TwigTemplate_c9437b61ec57559ab348b39928f8e04f extends Template
         <div class=\"flex flex-col justify-between min-h-screen relative\">
             <div>
                 <header class=\"h-[114px] shrink-0 flex flex-col sm:flex-row items-center sm:justify-between py-4 sm:py-0 px-6 border-b border-white/20 shadow-md\">
-                    <a href=\"#\">
+                    <a href=\"";
+        // line 18
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_homepage");
+        echo " \">
                         <img class=\"h-[42px]\" src=\"";
         // line 19
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/starshop-logo.png"), "html", null, true);
         echo "\" alt=\"starshop logo\">
                     </a>
                     <nav class=\"flex space-x-4 font-semibold\">
-                        <a class=\"hover:text-amber-400 pt-2\" href=\"#\">
+                        <a class=\"hover:text-amber-400 pt-2\" href=\"";
+        // line 22
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_homepage");
+        echo " \">
                             Home
                         </a>
                         <a class=\"hover:text-amber-400  pt-2\" href=\"#\">
@@ -228,7 +234,7 @@ class __TwigTemplate_c9437b61ec57559ab348b39928f8e04f extends Template
      */
     public function getDebugInfo()
     {
-        return array (  193 => 36,  174 => 11,  164 => 12,  162 => 11,  152 => 10,  142 => 8,  132 => 7,  113 => 5,  96 => 37,  94 => 36,  74 => 19,  66 => 13,  64 => 10,  61 => 9,  59 => 7,  54 => 5,  48 => 1,);
+        return array (  199 => 36,  180 => 11,  170 => 12,  168 => 11,  158 => 10,  148 => 8,  138 => 7,  119 => 5,  102 => 37,  100 => 36,  83 => 22,  77 => 19,  73 => 18,  66 => 13,  64 => 10,  61 => 9,  59 => 7,  54 => 5,  48 => 1,);
     }
 
     public function getSourceContext()
@@ -250,11 +256,11 @@ class __TwigTemplate_c9437b61ec57559ab348b39928f8e04f extends Template
         <div class=\"flex flex-col justify-between min-h-screen relative\">
             <div>
                 <header class=\"h-[114px] shrink-0 flex flex-col sm:flex-row items-center sm:justify-between py-4 sm:py-0 px-6 border-b border-white/20 shadow-md\">
-                    <a href=\"#\">
+                    <a href=\"{{ path('app_homepage') }} \">
                         <img class=\"h-[42px]\" src=\"{{ asset('images/starshop-logo.png') }}\" alt=\"starshop logo\">
                     </a>
                     <nav class=\"flex space-x-4 font-semibold\">
-                        <a class=\"hover:text-amber-400 pt-2\" href=\"#\">
+                        <a class=\"hover:text-amber-400 pt-2\" href=\"{{ path('app_homepage') }} \">
                             Home
                         </a>
                         <a class=\"hover:text-amber-400  pt-2\" href=\"#\">

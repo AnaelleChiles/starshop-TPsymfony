@@ -23,9 +23,9 @@ class StarshipRepository{
     public function findAll() : array{
         $this->logger->info("Ceci est un super duper message");
         return [
-            new Starship(1,'lolilo1', "", "",  StarshipStatusEnum::IN_PROGRESS),
-            new Starship( 2,'lolilo2', "", "", StarshipStatusEnum::COMPLETED),
-            new Starship(3,'lolilo3', "", "",  StarshipStatusEnum::WAITING),
+            new Starship(1,'lolilo1', "JSP", "Jean-mie",  StarshipStatusEnum::IN_PROGRESS),
+            new Starship( 2,'lolilo2', "Derniere", "Michel", StarshipStatusEnum::COMPLETED),
+            new Starship(3,'lolilo3', "Premiere", "Eclipso Starlight",  StarshipStatusEnum::WAITING),
         ];
     }
 

@@ -105,32 +105,49 @@ class __TwigTemplate_a7c695776b8c53a0daf91561e4c1a00c extends Template
             // line 16
             echo "                    <div class=\"bg-[#16202A] rounded-2xl pl-5 py-5 pr-11 flex flex-col min-[1174px]:flex-row min-[1174px]:justify-between\">
                         <div class=\"flex justify-center min-[1174px]:justify-start\">
-                            <img class=\"h-[83px] w-[84px]\" src=\"/images/status-in-progress.png\" alt=\"Status: in progress\">
+                            <img class=\"h-[83px] w-[84px]\" src=\"";
+            // line 18
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(twig_get_attribute($this->env, $this->source, $context["ship"], "StatusImageFilename", [], "any", false, false, false, 18)), "html", null, true);
+            echo " \" alt=\"Status: in progress\">
                             <div class=\"ml-5\">
                                 <div class=\"rounded-2xl py-1 px-3 flex justify-center w-32 items-center bg-amber-400/10\">
                                     <div class=\"rounded-full h-2 w-2 bg-amber-400 blur-[1px] mr-2\"></div>
-                                    <p class=\"uppercase text-xs text-nowrap\"> ";
+                                    <p class=\"uppercase text-xs text-nowrap\" alt=\"";
             // line 22
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["ship"], "status", [], "any", false, false, false, 22), "value", [], "any", false, false, false, 22), "html", null, true);
+            echo "\"> ";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["ship"], "statusString", [], "any", false, false, false, 22), "html", null, true);
             echo "</p>
                                 </div>
                                 <h4 class=\"text-[22px] pt-1 font-semibold\">
                                     <a
                                         class=\"hover:text-slate-200\"
-                                        href=\"#\"
-                                    >USS LeafyCruiser</a>
+                                        href=\"";
+            // line 27
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_starship_show", ["id" => twig_get_attribute($this->env, $this->source, $context["ship"], "id", [], "any", false, false, false, 27)]), "html", null, true);
+            echo "\"
+                                    >";
+            // line 28
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["ship"], "name", [], "any", false, false, false, 28), "html", null, true);
+            echo "</a>
                                 </h4>
                             </div>
                         </div>
                         <div class=\"flex justify-center min-[1174px]:justify-start mt-2 min-[1174px]:mt-0 shrink-0\">
                             <div class=\"border-r border-white/20 pr-8\">
                                 <p class=\"text-slate-400 text-xs\">Captain</p>
-                                <p class=\"text-xl\">Jean-Luc Pickles</p>
+                                <p class=\"text-xl\">";
+            // line 35
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["ship"], "captain", [], "any", false, false, false, 35), "html", null, true);
+            echo "</p>
                             </div>
 
                             <div class=\"pl-8 w-[100px]\">
                                 <p class=\"text-slate-400 text-xs\">Class</p>
-                                <p class=\"text-xl\">Garden</p>
+                                <p class=\"text-xl\">";
+            // line 40
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["ship"], "class", [], "any", false, false, false, 40), "html", null, true);
+            echo "</p>
                             </div>
                         </div>
                     </div>
@@ -181,7 +198,7 @@ class __TwigTemplate_a7c695776b8c53a0daf91561e4c1a00c extends Template
      */
     public function getDebugInfo()
     {
-        return array (  149 => 49,  143 => 45,  114 => 22,  106 => 16,  102 => 15,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  166 => 49,  160 => 45,  149 => 40,  141 => 35,  131 => 28,  127 => 27,  117 => 22,  110 => 18,  106 => 16,  102 => 15,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -203,29 +220,29 @@ class __TwigTemplate_a7c695776b8c53a0daf91561e4c1a00c extends Template
                 {% for ship in ships %}
                     <div class=\"bg-[#16202A] rounded-2xl pl-5 py-5 pr-11 flex flex-col min-[1174px]:flex-row min-[1174px]:justify-between\">
                         <div class=\"flex justify-center min-[1174px]:justify-start\">
-                            <img class=\"h-[83px] w-[84px]\" src=\"/images/status-in-progress.png\" alt=\"Status: in progress\">
+                            <img class=\"h-[83px] w-[84px]\" src=\"{{ asset(ship.StatusImageFilename) }} \" alt=\"Status: in progress\">
                             <div class=\"ml-5\">
                                 <div class=\"rounded-2xl py-1 px-3 flex justify-center w-32 items-center bg-amber-400/10\">
                                     <div class=\"rounded-full h-2 w-2 bg-amber-400 blur-[1px] mr-2\"></div>
-                                    <p class=\"uppercase text-xs text-nowrap\"> {{ ship.status.value }}</p>
+                                    <p class=\"uppercase text-xs text-nowrap\" alt=\"{{ship.status.value}}\"> {{  ship.statusString }}</p>
                                 </div>
                                 <h4 class=\"text-[22px] pt-1 font-semibold\">
                                     <a
                                         class=\"hover:text-slate-200\"
-                                        href=\"#\"
-                                    >USS LeafyCruiser</a>
+                                        href=\"{{ path('app_starship_show', { id: ship.id }) }}\"
+                                    >{{ ship.name }}</a>
                                 </h4>
                             </div>
                         </div>
                         <div class=\"flex justify-center min-[1174px]:justify-start mt-2 min-[1174px]:mt-0 shrink-0\">
                             <div class=\"border-r border-white/20 pr-8\">
                                 <p class=\"text-slate-400 text-xs\">Captain</p>
-                                <p class=\"text-xl\">Jean-Luc Pickles</p>
+                                <p class=\"text-xl\">{{ ship.captain }}</p>
                             </div>
 
                             <div class=\"pl-8 w-[100px]\">
                                 <p class=\"text-slate-400 text-xs\">Class</p>
-                                <p class=\"text-xl\">Garden</p>
+                                <p class=\"text-xl\">{{ ship.class }}</p>
                             </div>
                         </div>
                     </div>

@@ -7,7 +7,7 @@ use App\Repository\StarshipRepository;
 
 class MainController extends AbstractController
 {
-    #[Route('/home')]
+    #[Route('/home', name: 'app_homepage')]
     public function HomePage(StarshipRepository $starshipRepository) : Response {
         $ships = $starshipRepository->findAll();
         $starshipCount = count($ships);
