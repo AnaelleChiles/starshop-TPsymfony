@@ -21,6 +21,7 @@
       <parameter key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</parameter>
       <parameter key="SymfonycastsTailwindBundle">Symfonycasts\TailwindBundle\SymfonycastsTailwindBundle</parameter>
       <parameter key="StimulusBundle">Symfony\UX\StimulusBundle\StimulusBundle</parameter>
+      <parameter key="TurboBundle">Symfony\UX\Turbo\TurboBundle</parameter>
     </parameter>
     <parameter key="kernel.bundles_metadata" type="collection">
       <parameter key="FrameworkBundle" type="collection">
@@ -54,6 +55,10 @@
       <parameter key="StimulusBundle" type="collection">
         <parameter key="path">C:\Users\ac606785\Desktop\starshop-TPsymfony\vendor\symfony\stimulus-bundle</parameter>
         <parameter key="namespace">Symfony\UX\StimulusBundle</parameter>
+      </parameter>
+      <parameter key="TurboBundle" type="collection">
+        <parameter key="path">C:\Users\ac606785\Desktop\starshop-TPsymfony\vendor\symfony\ux-turbo</parameter>
+        <parameter key="namespace">Symfony\UX\Turbo</parameter>
       </parameter>
     </parameter>
     <parameter key="kernel.charset">UTF-8</parameter>
@@ -1090,6 +1095,7 @@
     </service>
     <service id="asset_mapper.repository" class="Symfony\Component\AssetMapper\AssetMapperRepository">
       <argument type="collection">
+        <argument key="C:\Users\ac606785\Desktop\starshop-TPsymfony\vendor\symfony\ux-turbo\src\DependencyInjection/../../assets/dist">@symfony/ux-turbo</argument>
         <argument key="C:\Users\ac606785\Desktop\starshop-TPsymfony\vendor\symfony\stimulus-bundle\src\DependencyInjection/../../assets/dist">@symfony/stimulus-bundle</argument>
         <argument key="assets/"></argument>
       </argument>
@@ -1210,7 +1216,9 @@
       <argument type="service" id="assets.packages" on-invalid="null"/>
       <argument>UTF-8</argument>
       <argument>es-module-shims</argument>
-      <argument type="collection"/>
+      <argument type="collection">
+        <argument key="data-turbo-track">reload</argument>
+      </argument>
       <argument type="service" id="request_stack"/>
     </service>
     <service id="asset_mapper.importmap.auditor" class="Symfony\Component\AssetMapper\ImportMap\ImportMapAuditor">
@@ -2373,6 +2381,9 @@
         <argument type="service" id="stimulus.ux_controllers_twig_extension"/>
       </call>
       <call method="addExtension">
+        <argument type="service" id="turbo.twig.extension"/>
+      </call>
+      <call method="addExtension">
         <argument type="service" id="stimulus.twig_extension"/>
       </call>
       <call method="addGlobal">
@@ -2881,6 +2892,24 @@
       <tag name="asset_mapper.compiler" priority="100"/>
       <argument type="service" id="stimulus.asset_mapper.controllers_map_generator"/>
       <argument>true</argument>
+    </service>
+    <service id="turbo.id_accessor" class="Symfony\UX\Turbo\Broadcaster\IdAccessor">
+      <argument type="service" id="property_accessor" on-invalid="null"/>
+      <argument>null</argument>
+    </service>
+    <service id="turbo.broadcaster.action_renderer" class="Symfony\UX\Turbo\Broadcaster\TwigBroadcaster">
+      <tag name="container.decorator" id="turbo.broadcaster.imux" inner="turbo.broadcaster.action_renderer.inner"/>
+      <argument type="service" id="turbo.broadcaster.action_renderer.inner"/>
+      <argument type="service" id="twig"/>
+      <argument type="collection">
+        <argument key="App\Entity\">broadcast/</argument>
+      </argument>
+      <argument type="service" id="turbo.id_accessor"/>
+    </service>
+    <service id="turbo.twig.extension" class="Symfony\UX\Turbo\Twig\TwigExtension">
+      <tag name="twig.extension"/>
+      <argument type="service" id=".service_locator.Xbsa8iG"/>
+      <argument>default</argument>
     </service>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\MainController" class="App\Controller\MainController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\MainController" class="App\Controller\MainController" autowire="true" abstract="true"/>
@@ -3468,6 +3497,9 @@
         </argument>
       </call>
     </service>
+    <service id="turbo.broadcaster.action_renderer.inner" class="Symfony\UX\Turbo\Broadcaster\ImuxBroadcaster">
+      <argument type="tagged_iterator" tag="turbo.broadcaster"/>
+    </service>
     <service id=".errored..service_locator.y4_Zrx..Symfony\Component\Config\Loader\LoaderInterface" class="Symfony\Component\Config\Loader\LoaderInterface">
       <tag name="container.error" message="Cannot autowire service &quot;.service_locator.y4_Zrx.&quot;: it needs an instance of &quot;Symfony\Component\Config\Loader\LoaderInterface&quot; but this type has been excluded from autowiring."/>
     </service>
@@ -3964,6 +3996,7 @@
     <service id="Twig\Environment" alias="twig"/>
     <service id="logger" alias="monolog.logger"/>
     <service id="Psr\Log\LoggerInterface" alias="monolog.logger"/>
+    <service id="Symfony\UX\Turbo\Broadcaster\BroadcasterInterface" alias="turbo.broadcaster.action_renderer"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.bJ.4HC5" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
     <service id="argument_resolver.controller_locator" alias=".service_locator.dMzh3ws"/>
@@ -3991,6 +4024,7 @@
     <service id="serializer" alias="debug.serializer"/>
     <service id="twig.error_renderer.html.inner" alias="error_handler.error_renderer.html"/>
     <service id="var_dumper.cli_dumper" alias="var_dumper.contextualized_cli_dumper"/>
+    <service id="turbo.broadcaster.imux" alias="turbo.broadcaster.action_renderer"/>
     <service id=".service_locator.gFlme_s" alias=".service_locator.y4_Zrx."/>
     <service id=".service_locator.L8xxlto" alias=".service_locator.c_CjwZa"/>
     <service id=".service_locator.VoiO6Bm" alias=".service_locator.zN9CGC."/>

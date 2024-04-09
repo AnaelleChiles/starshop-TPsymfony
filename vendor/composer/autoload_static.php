@@ -33,6 +33,7 @@ class ComposerStaticInit9a009697e12b2fafffa714e43af84016
         'S' => 
         array (
             'Symfonycasts\\TailwindBundle\\' => 28,
+            'Symfony\\UX\\Turbo\\' => 17,
             'Symfony\\UX\\StimulusBundle\\' => 26,
             'Symfony\\Runtime\\Symfony\\Component\\' => 34,
             'Symfony\\Polyfill\\Php83\\' => 23,
@@ -127,6 +128,10 @@ class ComposerStaticInit9a009697e12b2fafffa714e43af84016
         'Symfonycasts\\TailwindBundle\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfonycasts/tailwind-bundle/src',
+        ),
+        'Symfony\\UX\\Turbo\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/ux-turbo/src',
         ),
         'Symfony\\UX\\StimulusBundle\\' => 
         array (
