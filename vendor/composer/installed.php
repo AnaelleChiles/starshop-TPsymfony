@@ -3,7 +3,7 @@
         'name' => '__root__',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => '8ece1dd524d5f8f89ddd0f74008cd286e9914e2a',
+        'reference' => 'b43237b0ad51256a654b516cd8dec4e2226c99bb',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         '__root__' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => '8ece1dd524d5f8f89ddd0f74008cd286e9914e2a',
+            'reference' => 'b43237b0ad51256a654b516cd8dec4e2226c99bb',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -559,6 +559,15 @@
             'provided' => array(
                 0 => '1.1|2.0|3.0',
             ),
+        ),
+        'symfony/stimulus-bundle' => array(
+            'pretty_version' => 'v2.16.0',
+            'version' => '2.16.0.0',
+            'reference' => '6add4bdab1b9df4f2b2532a9dcb7b2f26dbba634',
+            'type' => 'symfony-bundle',
+            'install_path' => __DIR__ . '/../symfony/stimulus-bundle',
+            'aliases' => array(),
+            'dev_requirement' => false,
         ),
         'symfony/stopwatch' => array(
             'pretty_version' => 'v7.0.3',

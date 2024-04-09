@@ -20,6 +20,7 @@
       <parameter key="MonologBundle">Symfony\Bundle\MonologBundle\MonologBundle</parameter>
       <parameter key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</parameter>
       <parameter key="SymfonycastsTailwindBundle">Symfonycasts\TailwindBundle\SymfonycastsTailwindBundle</parameter>
+      <parameter key="StimulusBundle">Symfony\UX\StimulusBundle\StimulusBundle</parameter>
     </parameter>
     <parameter key="kernel.bundles_metadata" type="collection">
       <parameter key="FrameworkBundle" type="collection">
@@ -49,6 +50,10 @@
       <parameter key="SymfonycastsTailwindBundle" type="collection">
         <parameter key="path">C:\Users\ac606785\Desktop\starshop-TPsymfony\vendor\symfonycasts\tailwind-bundle\src</parameter>
         <parameter key="namespace">Symfonycasts\TailwindBundle</parameter>
+      </parameter>
+      <parameter key="StimulusBundle" type="collection">
+        <parameter key="path">C:\Users\ac606785\Desktop\starshop-TPsymfony\vendor\symfony\stimulus-bundle</parameter>
+        <parameter key="namespace">Symfony\UX\StimulusBundle</parameter>
       </parameter>
     </parameter>
     <parameter key="kernel.charset">UTF-8</parameter>
@@ -1085,10 +1090,14 @@
     </service>
     <service id="asset_mapper.repository" class="Symfony\Component\AssetMapper\AssetMapperRepository">
       <argument type="collection">
+        <argument key="C:\Users\ac606785\Desktop\starshop-TPsymfony\vendor\symfony\stimulus-bundle\src\DependencyInjection/../../assets/dist">@symfony/stimulus-bundle</argument>
         <argument key="assets/"></argument>
       </argument>
       <argument>C:\Users\ac606785\Desktop\starshop-TPsymfony</argument>
-      <argument type="collection"/>
+      <argument type="collection">
+        <argument>#^(?=[^\.]).*\.d\.ts$#</argument>
+        <argument>#^(?=[^\.]).*.*/(?=[^\.])controllers\.json$#</argument>
+      </argument>
       <argument>true</argument>
       <argument>true</argument>
     </service>
@@ -2360,6 +2369,12 @@
       <call method="addExtension">
         <argument type="service" id="twig.extension.code"/>
       </call>
+      <call method="addExtension">
+        <argument type="service" id="stimulus.ux_controllers_twig_extension"/>
+      </call>
+      <call method="addExtension">
+        <argument type="service" id="stimulus.twig_extension"/>
+      </call>
       <call method="addGlobal">
         <argument>app</argument>
         <argument type="service" id="twig.app_variable"/>
@@ -2499,7 +2514,7 @@
       <argument>,</argument>
     </service>
     <service id="twig.runtime_loader" class="Twig\RuntimeLoader\ContainerRuntimeLoader">
-      <argument type="service" id=".service_locator.FvuR.TR"/>
+      <argument type="service" id=".service_locator.OT9POzm"/>
     </service>
     <service id="twig.error_renderer.html" class="Symfony\Bridge\Twig\ErrorRenderer\TwigErrorRenderer">
       <argument type="service" id="twig"/>
@@ -2828,6 +2843,44 @@
     <service id="tailwind.css_asset_compiler" class="Symfonycasts\TailwindBundle\AssetMapper\TailwindCssAssetCompiler">
       <tag name="asset_mapper.compiler" priority="10"/>
       <argument type="service" id="tailwind.builder"/>
+    </service>
+    <service id="stimulus.helper" class="Symfony\UX\StimulusBundle\Helper\StimulusHelper">
+      <argument type="service" id="twig" on-invalid="null"/>
+    </service>
+    <service id="stimulus.twig_extension" class="Symfony\UX\StimulusBundle\Twig\StimulusTwigExtension">
+      <tag name="twig.extension" priority="-10"/>
+      <argument type="service" id="stimulus.helper"/>
+    </service>
+    <service id="stimulus.asset_mapper.ux_package_reader" class="Symfony\UX\StimulusBundle\Ux\UxPackageReader">
+      <argument>C:\Users\ac606785\Desktop\starshop-TPsymfony</argument>
+    </service>
+    <service id="stimulus.ux_controllers_twig_extension" class="Symfony\UX\StimulusBundle\Twig\UxControllersTwigExtension">
+      <tag name="twig.extension"/>
+    </service>
+    <service id="stimulus.ux_controllers_twig_runtime" class="Symfony\UX\StimulusBundle\Twig\UxControllersTwigRuntime">
+      <tag name="twig.runtime"/>
+      <argument type="service" id="stimulus.asset_mapper.controllers_map_generator"/>
+      <argument type="service" id="asset_mapper"/>
+      <argument type="service" id="stimulus.asset_mapper.ux_package_reader"/>
+      <argument>C:\Users\ac606785\Desktop\starshop-TPsymfony</argument>
+    </service>
+    <service id="stimulus.asset_mapper.controllers_map_generator" class="Symfony\UX\StimulusBundle\AssetMapper\ControllersMapGenerator">
+      <argument type="service" id="asset_mapper"/>
+      <argument type="service" id="stimulus.asset_mapper.ux_package_reader"/>
+      <argument type="collection">
+        <argument>C:\Users\ac606785\Desktop\starshop-TPsymfony/assets/controllers</argument>
+      </argument>
+      <argument>C:\Users\ac606785\Desktop\starshop-TPsymfony/assets/controllers.json</argument>
+      <argument type="service" id="stimulus.asset_mapper.auto_import_locator" on-invalid="null"/>
+    </service>
+    <service id="stimulus.asset_mapper.auto_import_locator" class="Symfony\UX\StimulusBundle\AssetMapper\AutoImportLocator">
+      <argument type="service" id="asset_mapper.importmap.config_reader"/>
+      <argument type="service" id="asset_mapper"/>
+    </service>
+    <service id="stimulus.asset_mapper.loader_javascript_compiler" class="Symfony\UX\StimulusBundle\AssetMapper\StimulusLoaderJavaScriptCompiler">
+      <tag name="asset_mapper.compiler" priority="100"/>
+      <argument type="service" id="stimulus.asset_mapper.controllers_map_generator"/>
+      <argument>true</argument>
     </service>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\MainController" class="App\Controller\MainController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\MainController" class="App\Controller\MainController" autowire="true" abstract="true"/>
@@ -3838,12 +3891,13 @@
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
-    <service id=".service_locator.FvuR.TR" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.OT9POzm" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="Symfony\Bridge\Twig\Extension\HttpKernelRuntime" type="service_closure" id="twig.runtime.httpkernel"/>
         <argument key="Symfony\Bridge\Twig\Extension\ImportMapRuntime" type="service_closure" id="twig.runtime.importmap"/>
         <argument key="Symfony\Bridge\Twig\Extension\SerializerRuntime" type="service_closure" id="twig.runtime.serializer"/>
+        <argument key="Symfony\UX\StimulusBundle\Twig\UxControllersTwigRuntime" type="service_closure" id="stimulus.ux_controllers_twig_runtime"/>
       </argument>
     </service>
     <service id="App\Kernel" alias="kernel" public="true"/>
